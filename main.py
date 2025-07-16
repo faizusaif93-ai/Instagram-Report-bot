@@ -34,7 +34,7 @@ def keep_alive():
 keep_alive()
 
 # Initialize the Telegram bot
-API_TOKEN = os.getenv("API_TOKEN")
+API_TOKEN = ("7838624534:AAE7D5udrJjyR63YzrtKCa87SJ--HE1leR8")
 FORCE_JOIN_CHANNEL = os.getenv("FORCE_JOIN_CHANNEL")
 ADMIN_ID = os.getenv("ADMIN_ID")
 
@@ -117,11 +117,6 @@ def get_public_instagram_info(username):
         return None
 
 def is_user_in_channel(user_id):
-    try:
-        member = bot.get_chat_member(f"@{FORCE_JOIN_CHANNEL}", user_id)
-        return member.status in ['member', 'administrator', 'creator']
-    except telebot.apihelper.ApiTelegramException:
-        return False
 
 def escape_markdown_v2(text):
     # Escape special MarkdownV2 characters
